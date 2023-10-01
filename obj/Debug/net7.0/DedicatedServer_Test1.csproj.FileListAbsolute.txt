@@ -12,3 +12,17 @@
 /Users/flashe/Flashe/VsCode/DedicatedServer_Test1/obj/Debug/net7.0/DedicatedServer_Test1.pdb
 /Users/flashe/Flashe/VsCode/DedicatedServer_Test1/obj/Debug/net7.0/DedicatedServer_Test1.genruntimeconfig.cache
 /Users/flashe/Flashe/VsCode/DedicatedServer_Test1/obj/Debug/net7.0/ref/DedicatedServer_Test1.dll
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/bin/Debug/net7.0/DedicatedServer_Test1
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/bin/Debug/net7.0/DedicatedServer_Test1.deps.json
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/bin/Debug/net7.0/DedicatedServer_Test1.runtimeconfig.json
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/bin/Debug/net7.0/DedicatedServer_Test1.dll
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/bin/Debug/net7.0/DedicatedServer_Test1.pdb
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/DedicatedServer_Test1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/DedicatedServer_Test1.AssemblyInfoInputs.cache
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/DedicatedServer_Test1.AssemblyInfo.cs
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/DedicatedServer_Test1.csproj.CoreCompileInputs.cache
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/DedicatedServer_Test1.dll
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/refint/DedicatedServer_Test1.dll
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/DedicatedServer_Test1.pdb
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/DedicatedServer_Test1.genruntimeconfig.cache
+/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/Debug/net7.0/ref/DedicatedServer_Test1.dll

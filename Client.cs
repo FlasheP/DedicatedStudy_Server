@@ -1,12 +1,14 @@
 using System.Net;
 using System.Net.Sockets;
+using System.Numerics;
 
-namespace DedicatedServer_Test1;
+namespace DedicatedStudy_Server;
 
 public class Client
 {
     public static int dataBufferSize = 4096; // 4mb
     public int id;
+    public Player player;
     public TCP tcp;
     public UDP udp;
     public Client(int _clientId)
@@ -137,7 +139,7 @@ public class Client
         public void Connect(IPEndPoint _endPoint)
         {
             endPoint = _endPoint;
-            ServerSend.UDPTest(id);
+            //ServerSend.UDPTest(id);
         }
         public void SendData(Packet _packet)
         {
@@ -156,6 +158,29 @@ public class Client
                     Server.packetHandlers[_packetId](id, _packet);
                 }
             });
+        }
+    }
+
+    public void SendPlayerInGame(string _playerName)
+    {
+        player = new Player(id, _playerName, new Vector3(0, 0, 0));
+
+        foreach (Client client in Server.clientsDic.Values)
+        {
+            if (client.player != null)
+            {
+                //서버안에 있는 다른 플레이어들을 새로 들어온 클라이언트 환경에서도 스폰시켜줌 
+                if (client.id != id)
+                    ServerSend.SpawnPlayer(id, client.player);
+            }
+        }
+        foreach (Client client in Server.clientsDic.Values)
+        {
+            if (client.player != null)
+            {
+                //모든 클라이언트 들에게 새로 들어온 플레이어를 스폰시켜줌
+                ServerSend.SpawnPlayer(client.id, player);
+            }
         }
     }
 }

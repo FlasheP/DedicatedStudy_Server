@@ -2,7 +2,7 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 
-namespace DedicatedServer_Test1;
+namespace DedicatedStudy_Server;
 
 public static class Server
 {
@@ -114,7 +114,8 @@ public static class Server
         packetHandlers = new Dictionary<int, PacketHandler>()
         {
             {(int)ClientPackets.WelcomeReceived, ServerHandle.WelcomeReceived},
-            {(int)ClientPackets.UDPTestReceived, ServerHandle.UDPTestReceived}
+            {(int)ClientPackets.PlayerMovement, ServerHandle.PlayerMovement},
+            //{(int)ClientPackets.UDPTestReceived, ServerHandle.UDPTestReceived}
         };
         Console.WriteLine("Initialized Packets");
     }
