@@ -1,4 +1,4 @@
-namespace DedicatedServer_Test1;
+namespace DedicatedStudy_Server;
 
 public static class Constants
 {

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Threading;
 
-namespace DedicatedServer_Test1;
+namespace DedicatedStudy_Server;
 
 public class Program
 {
     private static bool isRunning = false;
     static void Main(string[] args)
     {
-        Console.Title =  "GameServer";
+        Console.Title = "GameServer";
         isRunning = true;
 
         Thread mainThread = new Thread(new ThreadStart(MainThread));
@@ -22,15 +22,15 @@ public class Program
         Console.WriteLine($"Main thread started. Running ar {Constants.TICKS_PER_SEC} ticks per second");
         DateTime _nextLoop = DateTime.Now;
 
-        while(isRunning)
+        while (isRunning)
         {
-            while(_nextLoop < DateTime.Now)
+            while (_nextLoop < DateTime.Now)
             {
                 GameLogic.Update();
 
                 _nextLoop = _nextLoop.AddMilliseconds(Constants.MS_PER_TICK);
 
-                if(_nextLoop > DateTime.Now)
+                if (_nextLoop > DateTime.Now)
                 {
                     Thread.Sleep(_nextLoop - DateTime.Now);
                 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/flashe/Flashe/VsCode/DedicatedServer_Test1/DedicatedServer_Test1.csproj",
+      "projectUniqueName": "/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/DedicatedServer_Test1.csproj",
       "projectName": "DedicatedServer_Test1",
-      "projectPath": "/Users/flashe/Flashe/VsCode/DedicatedServer_Test1/DedicatedServer_Test1.csproj",
+      "projectPath": "/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/DedicatedServer_Test1.csproj",
       "packagesPath": "/Users/flashe/.nuget/packages/",
-      "outputPath": "/Users/flashe/Flashe/VsCode/DedicatedServer_Test1/obj/",
+      "outputPath": "/Users/flashe/Flashe/VsCode/DedicatedStudy_Server/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/flashe/.nuget/NuGet/NuGet.Config"
