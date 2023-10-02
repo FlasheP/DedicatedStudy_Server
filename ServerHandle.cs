@@ -20,6 +20,8 @@ class ServerHandle
     }
     public static void PlayerMovement(int _fromClient, Packet _packet)
     {
+        if (Server.clientsDic[_fromClient].player == null) return;
+
         float horizontal = _packet.ReadFloat();
         float vertical = _packet.ReadFloat();
         Quaternion rotation = _packet.ReadQuaternion();
