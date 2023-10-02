@@ -70,7 +70,15 @@ public static class ServerSend
             //플레이어 스폰은 한번만 실행 하고 손실 없이 반드시 실행되어야해서 확실하게 하기위해 tcp로 보낸다.
             SendTCPData(_toClient, _packet);
         }
-
+    }
+    public static void DisconnectPlayer(int _toClient, int _disconnectId)
+    {
+        using (Packet _packet = new Packet((int)ServerPackets.DisconncetPlayer))
+        {
+            _packet.Write(_disconnectId);
+            //플레이어 스폰은 한번만 실행 하고 손실 없이 반드시 실행되어야해서 확실하게 하기위해 tcp로 보낸다.
+            SendTCPData(_toClient, _packet);
+        }
     }
     public static void UDPTest(int _toClient)
     {

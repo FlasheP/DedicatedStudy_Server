@@ -43,6 +43,15 @@ public class Client
             //TODO : 웰컴 패킷 보내기
             ServerSend.Welcome(id, "Welcome To My Server.");
         }
+        public void Disconnect()
+        {
+            socket.Close();
+            stream = null;
+            receivedData = null;
+            receiveBuffer = null;
+            socket = null;
+
+        }
         public void SendData(Packet _packet)
         {
             try
@@ -108,20 +117,19 @@ public class Client
                 int _byteLength = stream.EndRead(_result);
                 if (_byteLength <= 0)
                 {
-                    //TODO : 연결끊기
+                    Server.clientsDic[id].Disconnect();
                     return;
                 }
 
                 byte[] _data = new byte[_byteLength];
                 Array.Copy(receiveBuffer, _data, _byteLength);
                 receivedData.Reset(HandleData(_data));
-                //TODO: _data 처리
                 stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveCallback, null);
             }
             catch (Exception _ex)
             {
                 Console.WriteLine($"Error receiveing TCP data : {_ex} ");
-                //TODO : 연결끊기
+                Server.clientsDic[id].Disconnect();
             }
         }
     }
@@ -141,6 +149,7 @@ public class Client
             endPoint = _endPoint;
             //ServerSend.UDPTest(id);
         }
+
         public void SendData(Packet _packet)
         {
             Server.SendUDPData(endPoint, _packet);
@@ -158,6 +167,10 @@ public class Client
                     Server.packetHandlers[_packetId](id, _packet);
                 }
             });
+        }
+        public void Disconnect()
+        {
+            endPoint = null;
         }
     }
 
@@ -182,5 +195,22 @@ public class Client
                 ServerSend.SpawnPlayer(client.id, player);
             }
         }
+    }
+    private void Disconnect()
+    {
+        foreach (Client client in Server.clientsDic.Values)
+        {
+            if (client.player != null)
+            {
+                if (client.id != id)
+                    ServerSend.DisconnectPlayer(client.id, id);
+            }
+        }
+
+        Console.WriteLine($"id : {id} / {tcp.socket.Client.RemoteEndPoint} has disconnected");
+        player = null;
+
+        tcp.Disconnect();
+        udp.Disconnect();
     }
 }
